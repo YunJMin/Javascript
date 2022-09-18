@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13. 슬라이드 쇼 만들기</title>
+</head>
+<body>
+ <div class="wrapper">
+    <div id="container">
+      <img src="images/pic-1.jpg">
+      <img src="images/pic-2.jpg">
+      <img src="images/pic-3.jpg">
+      <img src="images/pic-4.jpg">
+      <button id="prev">&lang;</button>
+      <button id="next">&rang;</button>
+    </div>
+  </div>
+  <style>
+    .wrapper {    /* 슬라이드 쇼 영역 스타일 */
+        width:600px;   /* 너비 */
+        margin:0 auto;  /* 화면 중앙에 배치 */
+        position:relative;  /* 슬라이드 위치를 잡기 위해 */
+        background-color:#ccc;
+        text-align:center;  /* 슬라이드를 화면 중앙에 배치 */
+    }
+    #container {   
+        position:absolute;
+    }
+    #container > img {  /* 각 이미지의 스타일 */
+        width:100%;  /* 슬라이드 영역에 꽉 차게 */
+        float:left;  /* 왼쪽부터 배치 */
+    }
+    button {
+        position:absolute;   /* 배치 방법 : absolute */
+        height:100%;  /* 버튼 높이를 슬라이드 영역에 꽉 채움 */
+        top:0;  /* 위로 바짝 붙여서 배치 */
+        border:none;  /* 테두리 없음 */
+        padding:20px; /* 패딩 20px */
+        background-color:transparent;  /* 투명 배경 */
+        color:#000;  /* 화살표 색 */
+        font-weight:800;  /* 진하기 */
+        font-size:24px;  /* 화살표 크기 */
+        opacity:0.5;  /* 불투명도 */      
+    }
+    #prev {
+        left:0;  /* 왼쪽으로 바짝 붙여서 배치 */
+    }
+    #next {
+        right:0;  /* 오른쪽 바짝 붙여서 배치 */
+    }
+    button:hover {   /* 버튼 위로 마우스 오버 했을 때의 스타일 */
+        background-color:#222;   /* 배경색 */
+        color:#fff;  /* 화살표 색 */
+        opacity:0.6;  /* 불투명도 */
+        cursor:pointer;  /* 마우스 커서 모양 */
+    }
+    button:focus {  /* 버튼에 포커싱했을 때 스타일 */
+        outline:0;  /* 주변 테두리 없애기 */
+    }
+  </style>
+  <script> 
+    const slide = document.querySelectorAll("#container > img");
+	const prev = document.querySelector("#prev");
+	const next = document.querySelector("#next");
+	let current = 0;
+
+	slideshow(current);
+	prev.addEventListener("click", prevslide);
+	next.addEventListener("click", nextslide);
+
+	function slideshow(a){
+		for(let i = 0; i < slide.length; i++){
+			slide[i].style.display = "none";
+		}
+		slide[a].style.display = "block";
+	}
+	function prevslide(){
+		if(current > 0) current -= 1;
+		else current = slide.length - 1;
+		slideshow(current);
+	}
+	function nextslide() {
+		if(current < slide.length-1) current += 1;
+		else current = 0;
+		slideshow(current);
+	}
+  </script>
+</body>
+</html>

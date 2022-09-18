@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. 변수 - 캘빈 온도계</title>
+</head>
+<body>
+<script>
+    //Temperature in Kelvin
+    //const kelvin = 293;
+    const kelvin = prompt("켈빈 온도는 몇 도입니까?", "293");
+    //Temperature in Celsius (conversion from Kelvin)
+    let celsius = kelvin - 273;
+    
+    //Temperature in Farenheit (convert from Celsius)
+    //used Math.floor() method to round number to whole number
+    let fahrenheit = celsius *(9/5)+32
+    fahrenheit = Math.floor(fahrenheit);
+    
+    //Temperature in Newton Scale (convert from Celsius)
+    //Use Math.floor() method to round number to whole number
+    let newton = celsius *(0.33)
+    newton = Math.floor(newton);
+    document.write(`<h1>${kelvin}K = ${celsius}°C = ${fahrenheit}°F = ${newton}N</h1>`);
+</script>
+</body>
+</html>

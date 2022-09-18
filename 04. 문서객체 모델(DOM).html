@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13-4 문서객체 모델(DOM)</title>
+</head>
+<body>
+  <button onclick="textcontent()">textcontent로 표﻿시</button>
+    <button onclick="innhtml()">innerhtml로 표시</button>
+    <h1>현재 시각: </h1>
+      <div id="current"></div>
+    
+    <script>
+      let now = new Date();
+      let $curDiv = document.getElementById("current");
+     function textcontent(){
+      $curDiv.textContent = now;
+      }
+      function innhtml() {
+        $curDiv.innerHTML = "<h3>" + now + "</h3>";
+      }
+    </script>
+</body>
+</html>
+  
+  

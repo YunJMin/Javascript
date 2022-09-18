@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13-5 자바스크립트 폼 입출력</title>
+</head>
+<body>
+    <style>
+        #msg {
+          border: 2px solid royalblue ;
+          margin-top : 20px;
+          padding: 20px;
+          width : 300px;
+          height : 100px;
+          box-sizing : border-box;
+          background-color: antiquewhite;
+        }
+        </style>
+        </head>
+        <body>
+        <h1>JavaScript 연습</h1>
+        <form name="form1">
+            <input type = "text" id="txt1">
+            <input type = "submit" value="확인" onclick ="hello()" >
+            <input type = "reset" value="취소">
+        </form>
+        <div id="msg"></div>
+        <script>
+                let $msgDiv= document.getElementById("msg");
+            function hello(){
+                alert("?!")
+                $msgDiv= textContent = text1.value;
+            }
+            function cc(){
+                $msgDiv= textContent = ("");
+                txt1.focus();
+            }
+        </script>
+</body>
+</html>
